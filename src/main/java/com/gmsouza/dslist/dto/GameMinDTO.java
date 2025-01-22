@@ -2,7 +2,8 @@ package com.gmsouza.dslist.dto;
 
 import com.gmsouza.dslist.entities.Game;
 
-public class GameMinDTO {
+//Versão "resumida" do Objeto game, contendo apenas as principais variaveis
+public class GameMinDTO{
     private Long id;
     private String title;
     private Integer year;
