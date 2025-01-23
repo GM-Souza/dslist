@@ -1,6 +1,7 @@
 package com.gmsouza.dslist.dto;
 
 import com.gmsouza.dslist.entities.Game;
+import com.gmsouza.dslist.projections.GameMinProjection;
 
 //Versão "resumida" do Objeto game, contendo apenas as principais variaveis
 public class GameMinDTO{
@@ -21,6 +22,14 @@ public class GameMinDTO{
         this.year = entity.getYear();
         this.imgUrl = entity.getImgUrl();
         this.shortDescription = entity.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        this.id = projection.getId();
+        this.title = projection.getTitle();
+        this.year = projection.getYear();
+        this.imgUrl = projection.getImgUrl();
+        this.shortDescription = projection.getShortDescription();
     }
 
     public Long getId() {
