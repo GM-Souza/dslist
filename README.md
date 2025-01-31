@@ -6,7 +6,7 @@
 
  - Cada jogo (Game) é composto por suas categorias e caracteristicas: (Nome, Nota de aprovação, Gênero, Plataforma, entre outros).
 
- - Os jogos são armazenas em uma lista (Game List) no Banco de dados de 0 até a quantidade inserida.
+ - Os jogos são armazenados e enumerados em uma lista (Game List) no Banco de dados.
      - O mapeamento foi realizado através de JPA e Hibernate.
      - O Banco escolhido foi o H2.
      - os dados para compor os jogos foram isenridos através do arquivo import.sql
