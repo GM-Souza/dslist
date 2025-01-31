@@ -8,10 +8,10 @@ import jakarta.persistence.ManyToOne;
 import java.util.Objects;
 
 /*Quando há uma relação de MUITOS para MUITOS, a Chave Primaria da terceira tabela relacional,
-é a composição das duas chaves estrangeiras.
+se da pela composição das duas chaves estrangeiras recebidas.
 
-Como esta aplicação segue o Modelo de Objetos, faz-se necessario a criação desta classe auxilar,
-para unificar as duas "Chaves Estrangeiras" (GAME, GameList) em um unico Objeto, para servir de Primary Key.
+Como esta API segue o Modelo de Objetos, faz-se necessário a criação desta classe auxilar,
+para unificar as duas "Chaves Estrangeiras" (GAME, GameList) em um unico Objeto, para atuar como Primary Key.
 */
 
 

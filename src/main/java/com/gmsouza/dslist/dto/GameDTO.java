@@ -3,6 +3,7 @@ package com.gmsouza.dslist.dto;
 import org.springframework.beans.BeanUtils;
 import com.gmsouza.dslist.entities.Game;
 
+//As classes DTO criam uma padronização no projeto, e evita loops por referências cíclicas.
 public class GameDTO {
 
     private Long id;

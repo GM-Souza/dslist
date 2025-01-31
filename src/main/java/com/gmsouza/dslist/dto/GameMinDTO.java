@@ -3,7 +3,7 @@ package com.gmsouza.dslist.dto;
 import com.gmsouza.dslist.entities.Game;
 import com.gmsouza.dslist.projections.GameMinProjection;
 
-//Versão "resumida" do Objeto game, contendo apenas as principais variaveis
+//Versão "resumida" do Objeto game, contendo apenas as principais variáveis.
 public class GameMinDTO{
     private Long id;
     private String title;

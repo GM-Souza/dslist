@@ -1,5 +1,3 @@
-//Classe responsavel por implementar a API
-
 package com.gmsouza.dslist.controllers;
 
 import com.gmsouza.dslist.dto.GameListDTO;
@@ -14,6 +12,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/lists")
+
+//Classe responsável por implementar a API
 public class GameListController {
 
         @Autowired
