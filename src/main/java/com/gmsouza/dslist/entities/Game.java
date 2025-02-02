@@ -1,41 +1,46 @@
 package com.gmsouza.dslist.entities;
 
+// Importações necessárias para o mapeamento JPA e manipulação de objetos no banco de dados
 import jakarta.persistence.*;
 
 import java.util.Objects;
 
-//Entity - Mapeamento Objeto Relacional.
-// Mapeando o objeto game para que ele vire um registro no Banco H2 (Banco de dados utilizado no projeto)
+// @Entity indica que a classe Game será mapeada para uma tabela no banco de dados.
 @Entity
-@Table(name = "tb_game")
+@Table(name = "tb_game")  // Define o nome da tabela no banco de dados como "tb_game"
 public class Game {
 
+    // Atributo id, que é a chave primária da tabela
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // O id será gerado automaticamente pelo banco, com auto incremento
     private Long id;
+
+    // Atributo título do jogo
     private String title;
 
-    // Customizando o nome da variavel, pois "year" é uma palavra reservada do banco de dados
-    //Caso não customize, ele mantem o nome da variavel.
-    @Column(name = "game_year")
+    // Customizando o nome da variável, pois "year" é uma palavra reservada do banco de dados
+    @Column(name = "game_year")  // O nome da coluna no banco será "game_year"
     private Integer year;
+
+    // Atributos adicionais que descrevem o jogo
     private String genre;
     private String platforms;
     private Double score;
     private String imgUrl;
 
-    //Alterando o tipo da variavel, para que o JPA a interprete como um tipo TEXTO.
-    //Da maneira como esta, enviando como String, o JPA entede e alocado no banco como um tipo VARCHAR(255)
+    // Atributos de descrição do jogo, sendo definidos como tipos TEXT no banco
     @Column(columnDefinition = "TEXT")
     private String shortDescription;
 
     @Column(columnDefinition = "TEXT")
     private String longDescription;
 
+    // Construtor sem parâmetros necessário para o JPA
     public Game(){
 
     }
 
+    // Construtor que inicializa todos os atributos da classe Game
     public Game(Long id, String title, String genre, Integer year, String platforms, Double score, String imgUrl, String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
@@ -47,6 +52,8 @@ public class Game {
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
     }
+
+    // Métodos Getters e Setters para acessar e modificar os valores dos atributos
 
     public Long getId() {
         return id;
@@ -120,15 +127,17 @@ public class Game {
         this.longDescription = longDescription;
     }
 
+    // Sobrescrita do metodo equals para comparar dois objetos Game
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) return false;  // Verifica se o objeto é da mesma classe
         Game game = (Game) o;
-        return Objects.equals(id, game.id);
+        return Objects.equals(id, game.id);  // Compara os objetos pelo id
     }
 
+    // Sobrescrita do metodo hashCode para gerar o código hash baseado no id
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hashCode(id);  // Gera o hashCode baseado no id
     }
 }

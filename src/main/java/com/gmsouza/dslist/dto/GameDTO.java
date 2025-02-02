@@ -1,11 +1,14 @@
 package com.gmsouza.dslist.dto;
 
+// Importação da classe BeanUtils do Spring para copiar propriedades entre objetos
 import org.springframework.beans.BeanUtils;
 import com.gmsouza.dslist.entities.Game;
 
-//As classes DTO criam uma padronização no projeto, e evita loops por referências cíclicas.
+// A classe GameDTO é um Data Transfer Object (DTO), que é usada para transferir dados entre camadas da aplicação.
+// O DTO ajuda a evitar referências cíclicas e melhora a performance ao limitar as informações transferidas.
 public class GameDTO {
 
+    // Atributos que representam os dados do jogo que serão transferidos via API
     private Long id;
     private String title;
     private Integer year;
@@ -16,9 +19,12 @@ public class GameDTO {
     private String shortDescription;
     private String longDescription;
 
+    // Construtor que recebe uma entidade Game e usa BeanUtils para copiar as propriedades da entidade para o DTO
     public GameDTO(Game entity) {
         BeanUtils.copyProperties(entity, this);
     }
+
+    // Métodos getters e setters para acessar e modificar os valores dos atributos do DTO
 
     public Long getId() {
         return id;

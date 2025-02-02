@@ -6,7 +6,9 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 public interface GameListRepository extends JpaRepository<GameList, Long> {
-    @Modifying
-    @Query(nativeQuery = true,value = "UPDATE tb_belonging SET position = :newPosition WHERE list_id = :listId AND game_id = :gameId")
+
+    // Metodo para atualizar a posição de um jogo na tabela tb_belonging
+    @Modifying  // Indica que a consulta será uma operação de modificação no banco de dados
+    @Query(nativeQuery = true, value = "UPDATE tb_belonging SET position = :newPosition WHERE list_id = :listId AND game_id = :gameId")
     void updateBelongingPosition(Long listId, Long gameId, Integer newPosition);
 }
