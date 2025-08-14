@@ -1,23 +1,20 @@
-# Sobre o Projeto
+# dslist – API de Listagem de Jogos
 
-  Este é um projeto realizado para estudo, através de um mini curso de 5 dias, apresentado por [Nélio Alves](https://www.instagram.com/devsuperior.ig/).
+## Sobre o Projeto
+Este projeto foi desenvolvido durante um mini curso de 5 dias ministrado por **Nélio Alves**. O objetivo principal foi a criação de uma **API REST** para gerenciamento de uma lista de jogos — com foco em organização, manipulação e persistência de dados no backend.
 
- - O foco foi a criação de uma API Rest para listagem de jogos.
+Cada jogo (Game) é composto por atributos como nome, nota de aprovação, gênero, plataforma, entre outros. Os jogos são armazenados em uma lista (Game List) no banco de dados, permitindo, por exemplo, movimentar um jogo da posição 3 para a posição 1, reorganizando toda a lista de acordo com a preferência do usuário.
 
- - Cada jogo (Game) é composto por suas categorias e caracteristicas: (Nome, Nota de aprovação, Gênero, Plataforma, entre outros).
+# Tecnologias utilizadas
+- **Java 100 %** como linguagem de programação
+- **Spring Boot** para desenvolvimento da API REST
+- **Spring Data JPA / Hibernate** para mapeamento objeto-relacional
+- **H2** como banco de dados em memória
+- **import.sql** para popular os dados iniciais de jogos
 
- - Os jogos são armazenados e enumerados em uma lista (Game List) no Banco de dados.
-     - O mapeamento foi realizado através de JPA e Hibernate.
-     - O Banco escolhido foi o H2.
-     - os dados para compor os jogos foram isenridos através do arquivo import.sql
-
-- A parte interessante do projeto, é a possibilidade de alterar a posição de um jogo, de acordo com a preferência do úsuario. Exemplo:
-    Mover um jogo da posição 3 para 1. E com essa movimentação, atualizar a lista para se adaptar a nova formação.
-
-
-# Objetivo
-
-  O objetivo do projeto foi estudar a criação de uma API com framework Spring Boot, utilizando JPA para mapeamento, H2 para armazenamento de dados e Postman para requisições.
-  
-  Além disso, foi possivel aprender sobre a delegação correta de Classes e pacotes (controllers, service, entities, repositories, DTOs) para estruturar projetos robustos.
-  
+# Objetivo do projeto
+- Estudar a criação e estruturação de uma API com **Spring Boot**  
+- Aprender a utilizar **JPA (Hibernate)** para persistência de entidades  
+- Conhecer a aplicação de um banco em memória (**H2**) para ambientes de testes  
+- Organizar a aplicação em camadas: controllers, services, entities, repositories e DTOs  
+- Implementar a funcionalidade de reordenação dinâmica de elementos em uma lista
